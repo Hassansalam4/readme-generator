@@ -1,6 +1,7 @@
 // TODO: Include packages needed for this application
 import inquirer from 'inquirer';
 import fs from 'fs';
+import { type } from 'os';
 // TODO: Create an array of questions for user input
 const questions = [
     {
@@ -11,12 +12,25 @@ const questions = [
       },{
         type: 'input',
         name:'description',
-        message:'what is the description of your project'
+        message:'what is the description of your project?',
       },{
         type:'input',
         name:'installation',
-        message:'how to install this project',
+        message:'how to install this project?',
+      },{
+        type:'input',
+        name:'information',
+        message:'how do you use it?',
+      },{
+        type:'input',
+        name:'guidelines',
+        message:'questions or comments about the guidelines?',
+      },{
+        type:'input',
+        name:'test',
+         message:'how did it work?',
       }
+
   
 ];
 
