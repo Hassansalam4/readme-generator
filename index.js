@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
 import inquirer from 'inquirer';
 import fs from 'fs';
-import { type } from 'os';
+import generateMarkdown from './utils/generateMarkdown.js'
 // TODO: Create an array of questions for user input
 const questions = [
     {
@@ -27,8 +27,18 @@ const questions = [
         message:'questions or comments about the guidelines?',
       },{
         type:'input',
+        name:'contribution',
+        message:'how to contribute to the project',
+      },{
+        type:'input',
         name:'test',
          message:'how did it work?',
+
+      },{
+        type:'list',
+        name:'license',
+        message:'choose a license',
+        choices:['MIT','Apache','BSD2','BSD3','NONE']
       }
 
   
@@ -49,6 +59,8 @@ function init() {
         questions
     ).then((data)=>{
         console.log(data)
+        let Readinfo=generateMarkdown(data)
+        writeToFile('index.md', Readinfo)
     })
 }
 
