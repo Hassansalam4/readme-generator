@@ -19,7 +19,7 @@ const questions = [
         message:'how to install this project?',
       },{
         type:'input',
-        name:'information',
+        name:'usage',
         message:'how do you use it?',
       },{
         type:'input',
@@ -29,7 +29,14 @@ const questions = [
         type:'input',
         name:'contribution',
         message:'how to contribute to the project',
-      },{
+      },
+      {
+        type:'input',
+        name:'information',
+         message:'any useful information?',
+
+      },
+      {
         type:'input',
         name:'test',
          message:'how did it work?',
@@ -60,7 +67,7 @@ function init() {
     ).then((data)=>{
         console.log(data)
         let Readinfo=generateMarkdown(data)
-        writeToFile('index.md', Readinfo)
+        writeToFile('SAMPLE_README.md', Readinfo)
     })
 }
 
